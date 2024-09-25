@@ -12,7 +12,7 @@ on:
 env:
   OPNAME: 'Raspberry Pi3B+'
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_BRANCH: 0c35082a17c90fe594ae5fddf8365de15c7465c9
   FEEDS_CONF: feeds.conf.default
   EXTERNAL_FILE: configs/LuciApp.config
   CONFIG_FILE: configs/RPi3B.config
