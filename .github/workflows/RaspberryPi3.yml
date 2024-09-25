@@ -12,7 +12,7 @@ on:
 env:
   OPNAME: 'Raspberry Pi3B+'
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: 0c35082a17c90fe594ae5fddf8365de15c7465c9
+  REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   EXTERNAL_FILE: configs/LuciApp.config
   CONFIG_FILE: configs/RPi3B.config
@@ -59,6 +59,8 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        cd openwrt
+        git checkout a3ca5c60f0d531c2be8ec3f598d571d98af8ceca
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Cache
