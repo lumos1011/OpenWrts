@@ -64,7 +64,8 @@ jobs:
         pwd
         cd openwrt
         ls
-        git checkout –b master a3ca5c60f0d531c2be8ec3f598d571d98af8ceca
+        git checkout a3ca5c60f0d531c2be8ec3f598d571d98af8ceca
+        git log
         pwd
         ls
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
