@@ -12,7 +12,7 @@ on:
 env:
   OPNAME: 'Raspberry Pi3B+'
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: main
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   EXTERNAL_FILE: configs/LuciApp.config
   CONFIG_FILE: configs/RPi3B.config
@@ -59,8 +59,7 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt
-        git checkout a3ca5c60f0d531c2be8ec3f598d571d98af8ceca
+        git checkout –b master a3ca5c60f0d531c2be8ec3f598d571d98af8ceca
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Cache
@@ -98,9 +97,9 @@ jobs:
         sed -i '/CONFIG_DEFAULT_luci/'d .config
         cat .config
 
-    #- name: SSH connection to Actions
-      #uses: P3TERX/ssh2actions@v1.0.0
-      #if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+    - name: SSH connection to Actions
+      uses: P3TERX/ssh2actions@v1.0.0
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
       #env:
         #TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         #TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
