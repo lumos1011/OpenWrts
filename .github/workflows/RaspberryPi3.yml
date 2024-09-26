@@ -58,12 +58,12 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        ls –l
+        ls
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        ls –l
+        ls
         pwd
         cd openwrt
-        ls –l
+        ls
         git checkout –b master a3ca5c60f0d531c2be8ec3f598d571d98af8ceca
         pwd
         ls
