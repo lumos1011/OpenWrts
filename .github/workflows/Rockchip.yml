@@ -130,9 +130,10 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
-        cp package/helloworld/* ./
+        #cp package/helloworld/* ./
         ls -l
-        rm -rf packages
+        #rm -rf packages
+        ls -l package
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
