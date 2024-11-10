@@ -137,7 +137,10 @@ jobs:
         rm -rf openwrt-rockchip-armv8.manifest
         rm -rf profiles.json
         rm -rf feeds.buildinfo
-        ls -l
+        cd ./../../packages/aarch64_generic/
+        ls -l luci
+        tar -zcvf luci.tar.gz luci/
+        mv luci.tar.gz ../../targets/rockchip/armv8/
         #mv packages.tar.gz /home/runner/work/OpenWrts/OpenWrts/openwrt/bin/targets/rockchip/armv8
         #ls -l /home/runner/work/OpenWrts/OpenWrts/openwrt/bin/targets/rockchip/armv8
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
