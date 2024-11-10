@@ -133,7 +133,6 @@ jobs:
         #cp package/helloworld/* ./
         ls -l
         #rm -rf packages
-        ls -l package
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
