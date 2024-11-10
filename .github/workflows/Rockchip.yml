@@ -132,7 +132,10 @@ jobs:
         cd openwrt/bin/targets/*/*
         #cp package/helloworld/* ./
         ls -l
+        tar -zcvf packages.tar.gz packages/
         #rm -rf packages
+        mv packages.tar.gz /home/runner/work/OpenWrts/OpenWrts/openwrt/bin/targets/rockchip/armv8
+        ls -l /home/runner/work/OpenWrts/OpenWrts/openwrt/bin/targets/rockchip/armv8
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >> $GITHUB_OUTPUT
 
