@@ -147,7 +147,7 @@ jobs:
         #ls -l luci
         #tar -zcvf luci.tar.gz luci/
         mv hello.tar.gz ../../targets/rockchip/armv8/
-        cd ../../targers/rockchip/armv8
+        #cd ../../targers/rockchip/armv8
         pwd
         ls
         #mv packages.tar.gz /home/runner/work/OpenWrts/OpenWrts/openwrt/bin/targets/rockchip/armv8
